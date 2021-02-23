@@ -23,25 +23,31 @@ class SimpleCNN(nn.Module):
     def __init__(self):
         super(SimpleCNN, self).__init__()
         layer1 = nn.Sequential()
-        layer1.add_module('conv1', nn.Conv2d(3, 32, 3, 1, padding=1)) # out = 32 * 640 * 480
+        layer1.add_module('conv1', nn.Conv2d(3, 16, 3, 1, padding=1)) # out = 32 * 640 * 480
         layer1.add_module('relu1', nn.ReLU(True))
         layer1.add_module('pool1',nn.MaxPool2d(2, stride= 2)) # out = 32 * 320 * 240
         self.layer1 = layer1
 
         layer2 = nn.Sequential()
-        layer2.add_module('conv2', nn.Conv2d(32, 64, 3, 1, padding=1)) # out = 64 * 320 * 240 
+        layer2.add_module('conv2', nn.Conv2d(16, 32, 3, 1, padding=1)) # out = 64 * 320 * 240 
         layer2.add_module('relu2', nn.ReLU(True))
         layer2.add_module('pool2', nn.MaxPool2d(2, stride= 2)) # out = 64 * 160 * 120
         self.layer2 = layer2
 
         layer3 = nn.Sequential()
-        layer3.add_module('conv3', nn.Conv2d(64, 128, 3, 1, padding=1)) # out = 64 * 160 * 120
+        layer3.add_module('conv3', nn.Conv2d(32, 64, 3, 1, padding=1)) # out = 64 * 160 * 120
         layer3.add_module('relu3', nn.ReLU(True))
-        layer3.add_module('pool3', nn.MaxPool2d(2, stride= 2)) # out = 128 * 80 * 60
+        layer3.add_module('pool3', nn.MaxPool2d(2, stride= 2)) # out = 64 * 80 * 60
         self.layer3 = layer3
+        
+        add_layer1 = nn.Sequential()
+        add_layer1.add_module('conv3', nn.Conv2d(64, 128, 3, 1, padding=1)) # out = 128 * 80 * 60
+        add_layer1.add_module('relu3', nn.ReLU(True))
+        add_layer1.add_module('pool3', nn.MaxPool2d(2, stride= 2)) # out = 128 * 40 * 30
+        self.add_layer1 = add_layer1
 
         layer4 = nn.Sequential()
-        layer4.add_module('fc1', nn.Linear(128 * 80 * 60, 512))
+        layer4.add_module('fc1', nn.Linear(128 * 40 * 30, 512))
         layer4.add_module('fc_relu1', nn.ReLU(True))
         layer4.add_module('fc2', nn.Linear(512, 64))
         layer4.add_module('fc_relu2', nn.ReLU(True))
