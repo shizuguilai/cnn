@@ -1,5 +1,4 @@
 import torch
-import matplotlib.pyplot as plt
 import os
 import torch.nn as nn
 import numpy as np
@@ -11,7 +10,7 @@ import torchvision.transforms
 
 batch_size = 270
 transfrom = torchvision.transforms.Compose([torchvision.transforms.ToTensor(), torchvision.transforms.Normalize([0.5, 0.5, 0.5], [0.5, 0.5, 0.5])])
-dataset = torchvision.datasets.ImageFolder('E:\学习python的过程\picture', transform=transfrom)
+dataset = torchvision.datasets.ImageFolder('../picture', transform=transfrom)
 train_loader = torch.utils.data.DataLoader(dataset = dataset, batch_size = batch_size)
 
 os.environ['KMP_DUPLICATE_LIB_OK']='True'
@@ -49,7 +48,7 @@ class SimpleCNN(nn.Module):
         layer4.add_module('fc3', nn.Linear(64, 10))
         self.layer4 = layer4
         
-    def forwar(self, x):
+    def forward(self, x):
         conv1 = self.layer1(x)
         conv2 = self.layer2(conv1)
         conv3 = self.layer3(conv2)
