@@ -24,15 +24,24 @@ class SimpleCNN(nn.Module):
     def __init__(self):
         super(SimpleCNN, self).__init__()
         self.conv1 = nn.Sequential(
-            nn.Conv2d(3, 32, kernel_size=3, padding= 1), # out = 32 * 640 * 480
+            nn.Conv2d(3, 8, kernel_size=3, padding= 1), # out = 8 * 640 * 480
             nn.ReLU(),
-            nn.MaxPool2d(stride = 2, kernel_size = 2), # out = 32* 320 * 240
-            nn.Conv2d(32, 64, kernel_size=3, padding= 1), # out = 64 * 320 * 240
+            nn.MaxPool2d(stride = 2, kernel_size = 2), # out = 8* 320 * 240
+            
+            nn.Conv2d(8, 16, kernel_size=3, padding= 1), # out = 16 * 320 * 240
             nn.ReLU(),
-            nn.MaxPool2d(stride = 2, kernel_size = 2)) #out = 64 * 160 * 120
+            nn.MaxPool2d(stride = 2, kernel_size = 2), # out = 16 * 160 * 120
+            
+            nn.Conv2d(16, 32, kernel_size=3, padding= 1), # out = 32 * 160 * 120
+            nn.ReLU(),
+            nn.MaxPool2d(stride = 2, kernel_size = 2), #out = 32 * 80 * 60
+            
+            nn.Conv2d(32, 64, kernel_size=3, padding= 1), # out = 64 * 80 * 60
+            nn.ReLU(),
+            nn.MaxPool2d(stride = 2, kernel_size = 2))  # out = 64 * 40 * 30
 
         self.dense = nn.Sequential(
-            nn.Linear(64 * 160 * 120, 1024),
+            nn.Linear(64 * 40 * 30, 1024),
             nn.ReLU(),
             nn.Dropout(p=0.5),
             nn.Linear(1024, 10))
