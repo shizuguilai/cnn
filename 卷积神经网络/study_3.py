@@ -1,5 +1,4 @@
 import torch
-import matplotlib.pyplot as plt
 import os
 import torch.nn as nn
 import numpy as np
@@ -12,7 +11,7 @@ os.environ['KMP_DUPLICATE_LIB_OK']='True'
 
 batch_size = 270
 transfrom = torchvision.transforms.Compose([torchvision.transforms.ToTensor(), torchvision.transforms.Normalize([0.5, 0.5, 0.5], [0.5, 0.5, 0.5])])
-dataset = torchvision.datasets.ImageFolder('E:\学习python的过程\picture', transform=transfrom)
+dataset = torchvision.datasets.ImageFolder('../picture', transform=transfrom)
 train_loader = torch.utils.data.DataLoader(dataset = dataset, batch_size = batch_size)
 
 
@@ -48,7 +47,7 @@ class SimpleCNN(nn.Module):
         
     def forward(self, x):
         x = self.conv1(x)
-        x = x.view(-1, 64 * 160 * 120)
+        x = x.view(-1, 64 * 40 * 30)
         x = self.dense(x)
         return x
 
@@ -71,6 +70,6 @@ for epoch in range(num_epochs):
         loss = criterion(preds, labels)
         loss.backward()
         optimizer.step()
-        if idx % 100 == 0:
+        if idx % batch_size == 0:
             print('epoch {}, batch{}, loss = {:g}'.format(epoch, idx, loss.item()))
 
