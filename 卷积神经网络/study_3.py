@@ -72,4 +72,22 @@ for epoch in range(num_epochs):
         optimizer.step()
         if idx % batch_size == 0:
             print('epoch {}, batch{}, loss = {:g}'.format(epoch, idx, loss.item()))
+			
+#test
+correct = 0
+total = 0
+for images, labels in test_loader:
+	preds = model(images)
+	predicted = torch.argmax(preds, 1)
+	total += labels.size(0)
+	correct += (predicted == labels).sum().item()
+
+accuracy = correct  / total
+print('accuracy: ',accuracy)
+
+
+
+
+
+
 
