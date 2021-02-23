@@ -25,15 +25,15 @@ class SimpleCNN(nn.Module):
     def __init__(self):
         super(SimpleCNN, self).__init__()
         layer1 = nn.Sequential()
-        layer1.add_module('conv1', nn.Conv2d(3, 16, 3, 1, padding=1)) # out = 32 * 640 * 480
+        layer1.add_module('conv1', nn.Conv2d(3, 8, 3, 1, padding=1)) # out = 8 * 640 * 480
         layer1.add_module('relu1', nn.ReLU())
-        layer1.add_module('pool1',nn.MaxPool2d(2, 2)) # out = 32 * 320 * 240
+        layer1.add_module('pool1',nn.MaxPool2d(2, 2)) # out = 8 * 320 * 240
         self.layer1 = layer1
 
         layer4 = nn.Sequential()
-        layer4.add_module('fc1', nn.Linear(16 * 320 * 240, 512))
+        layer4.add_module('fc1', nn.Linear(8 * 320 * 240, 256))
         layer4.add_module('fc_relu1', nn.ReLU())
-        layer4.add_module('fc2', nn.Linear(512, 64))
+        layer4.add_module('fc2', nn.Linear(256, 64))
         layer4.add_module('fc_relu2', nn.ReLU())
         layer4.add_module('fc3', nn.Linear(64, 10))
         self.layer4 = layer4
