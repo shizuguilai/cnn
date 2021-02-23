@@ -66,9 +66,16 @@ print(model)
 num_epochs = 5
 for epoch in range(num_epochs):
     for idx, (images, labels) in enumerate(train_loader):
+        optimizer.zero_grad()
         print('images.size: ', images.size())
+        # print('images:',images)
         #print(labels)
         print('labels.size: ', labels.size())
         preds = model(images)
         #print('preds:', preds)
+        loss = criterion(preds, labels)
+        loss.backward()
+        optimizer.step()
+        if idx % 100 == 0:
+            print('epoch {}, batch{}, loss = {:g}'.format(epoch, idx, loss.item()))
 
