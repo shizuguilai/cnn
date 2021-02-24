@@ -14,7 +14,7 @@ transfrom = torchvision.transforms.Compose([torchvision.transforms.ToTensor(), t
 train_dataset = torchvision.datasets.ImageFolder('../picture', transform=transfrom)
 train_loader = torch.utils.data.DataLoader(dataset = train_dataset, batch_size = batch_size)
 
-test_dataset = torchvision.dataset.ImageFolder('../test', transform=transfrom)
+test_dataset = torchvision.datasets.ImageFolder('../test', transform=transfrom)
 test_loader = torch.utils.data.DataLoader(dataset = test_dataset, batch_size = batch_size)
 
 """
