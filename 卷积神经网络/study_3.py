@@ -59,7 +59,7 @@ optimizer = torch.optim.Adam(model.parameters())
 print(model)
 
 #study
-num_epochs = 5
+num_epochs = 100
 for epoch in range(num_epochs):
     for idx, (images, labels) in enumerate(train_loader):
         optimizer.zero_grad()
@@ -85,7 +85,14 @@ for images, labels in test_loader:
 	correct += (predicted == labels).sum().item()
 
 accuracy = correct  / total
+print('correct: ',correct)
+print('total: ', total)
 print('accuracy: ',accuracy)
+
+print('whether to  save or not? y/Y')
+judge = input()
+if judge == 'y' or judge == 'Y' :
+    torch.save(model, 'model_100.pth')
 
 
 
