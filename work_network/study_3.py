@@ -61,31 +61,33 @@ print(model)
 #study
 num_epochs = 100
 for epoch in range(num_epochs):
+    total = 0
+    correct = 0
     for idx, (images, labels) in enumerate(train_loader): #train data
         optimizer.zero_grad()
         preds = model(images)
         loss = criterion(preds, labels)
         loss.backward()
         optimizer.step()
-		
-		predicted = torch.argmax(preds, 1)
-		total += labels.size(0)
-		correct += (predicted == labels).sum().item()
-		accuracy = correct/total
-		
+        predicted = torch.argmax(preds, 1)
+        total += labels.size(0)
+        correct += (predicted == labels).sum().item()
+        accuracy = correct/total		
         if idx % batch_size == 0:
-            print('train, epoch {}, accuracy = {}, loss = {:g} '.format(epoch, accuracy, loss.item()))
-			
-	for images, labels in test_loader: #test data
-		preds = model(images)
-		loss = criterion(preds, labels)	
-		predicted = torch.argmax(preds, 1)
-		total += labels.size(0)
-		correct += (predicted == labels).sum().item()
-		accuracy = correct/total
-		
-		if idx % batch_size == 0:
-            print('train, epoch {}, accuracy = {}, loss = {:g} '.format(epoch, accuracy, loss.item()))
+            print('train, epoch {}, accuracy = {}, loss = {:g}, total = {}, correct = {} '.format(epoch, accuracy, loss.item(), total, correct))
+                 
+    total = 0
+    correct = 0
+    for images, labels in test_loader: #test data
+        preds = model(images)
+        loss = criterion(preds, labels)	
+        predicted = torch.argmax(preds, 1)
+        total += labels.size(0)
+        correct += (predicted == labels).sum().item()
+        accuracy = correct/total
+        	
+        if idx % batch_size == 0:
+            print('test, epoch {}, accuracy = {}, loss = {:g}, total = {}, correct = {} '.format(epoch, accuracy, loss.item(), total, correct))
 			
 #test
 correct = 0

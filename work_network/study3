@@ -1,0 +1,226 @@
+SimpleCNN(
+  (conv1): Sequential(
+    (0): Conv2d(3, 8, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): ReLU()
+    (2): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (3): Conv2d(8, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (4): ReLU()
+    (5): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (6): Conv2d(16, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (7): ReLU()
+    (8): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (9): Conv2d(32, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (10): ReLU()
+    (11): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  )
+  (dense): Sequential(
+    (0): Linear(in_features=76800, out_features=1024, bias=True)
+    (1): ReLU()
+    (2): Dropout(p=0.5, inplace=False)
+    (3): Linear(in_features=1024, out_features=10, bias=True)
+  )
+)
+train, epoch 0, accuracy = 0.1111111111111111, loss = 2.30212, total = 225, correct = 25 
+test, epoch 0, accuracy = 0.2, loss = 2.32052, total = 45, correct = 9 
+train, epoch 1, accuracy = 0.12, loss = 2.31803, total = 225, correct = 27 
+test, epoch 1, accuracy = 0.06666666666666667, loss = 2.67854, total = 45, correct = 3 
+train, epoch 2, accuracy = 0.13333333333333333, loss = 2.65264, total = 225, correct = 30 
+test, epoch 2, accuracy = 0.15555555555555556, loss = 2.29466, total = 45, correct = 7 
+train, epoch 3, accuracy = 0.12444444444444444, loss = 2.2481, total = 225, correct = 28 
+test, epoch 3, accuracy = 0.26666666666666666, loss = 2.14209, total = 45, correct = 12 
+train, epoch 4, accuracy = 0.2577777777777778, loss = 2.12194, total = 225, correct = 58 
+test, epoch 4, accuracy = 0.28888888888888886, loss = 2.13173, total = 45, correct = 13 
+train, epoch 5, accuracy = 0.24, loss = 2.09897, total = 225, correct = 54 
+test, epoch 5, accuracy = 0.4222222222222222, loss = 1.93451, total = 45, correct = 19 
+train, epoch 6, accuracy = 0.4533333333333333, loss = 1.88849, total = 225, correct = 102 
+test, epoch 6, accuracy = 0.4444444444444444, loss = 1.76771, total = 45, correct = 20 
+train, epoch 7, accuracy = 0.5111111111111111, loss = 1.73263, total = 225, correct = 115 
+test, epoch 7, accuracy = 0.5777777777777777, loss = 1.57756, total = 45, correct = 26 
+train, epoch 8, accuracy = 0.56, loss = 1.5535, total = 225, correct = 126 
+test, epoch 8, accuracy = 0.5555555555555556, loss = 1.35765, total = 45, correct = 25 
+train, epoch 9, accuracy = 0.5555555555555556, loss = 1.34339, total = 225, correct = 125 
+test, epoch 9, accuracy = 0.5555555555555556, loss = 1.20881, total = 45, correct = 25 
+train, epoch 10, accuracy = 0.5733333333333334, loss = 1.17455, total = 225, correct = 129 
+test, epoch 10, accuracy = 0.5777777777777777, loss = 1.12252, total = 45, correct = 26 
+train, epoch 11, accuracy = 0.5955555555555555, loss = 1.05003, total = 225, correct = 134 
+test, epoch 11, accuracy = 0.6, loss = 0.992632, total = 45, correct = 27 
+train, epoch 12, accuracy = 0.5866666666666667, loss = 1.01202, total = 225, correct = 132 
+test, epoch 12, accuracy = 0.5555555555555556, loss = 1.14398, total = 45, correct = 25 
+train, epoch 13, accuracy = 0.6088888888888889, loss = 1.0355, total = 225, correct = 137 
+test, epoch 13, accuracy = 0.6444444444444445, loss = 1.14384, total = 45, correct = 29 
+train, epoch 14, accuracy = 0.64, loss = 0.980877, total = 225, correct = 144 
+test, epoch 14, accuracy = 0.6444444444444445, loss = 1.11115, total = 45, correct = 29 
+train, epoch 15, accuracy = 0.6622222222222223, loss = 0.912822, total = 225, correct = 149 
+test, epoch 15, accuracy = 0.6, loss = 1.05045, total = 45, correct = 27 
+train, epoch 16, accuracy = 0.7244444444444444, loss = 0.801497, total = 225, correct = 163 
+test, epoch 16, accuracy = 0.6444444444444445, loss = 0.912976, total = 45, correct = 29 
+train, epoch 17, accuracy = 0.6755555555555556, loss = 0.808864, total = 225, correct = 152 
+test, epoch 17, accuracy = 0.6888888888888889, loss = 0.940751, total = 45, correct = 31 
+train, epoch 18, accuracy = 0.7288888888888889, loss = 0.741279, total = 225, correct = 164 
+test, epoch 18, accuracy = 0.6666666666666666, loss = 0.809485, total = 45, correct = 30 
+train, epoch 19, accuracy = 0.7644444444444445, loss = 0.679315, total = 225, correct = 172 
+test, epoch 19, accuracy = 0.6666666666666666, loss = 0.901296, total = 45, correct = 30 
+train, epoch 20, accuracy = 0.8177777777777778, loss = 0.591133, total = 225, correct = 184 
+test, epoch 20, accuracy = 0.7555555555555555, loss = 0.709619, total = 45, correct = 34 
+train, epoch 21, accuracy = 0.8088888888888889, loss = 0.581212, total = 225, correct = 182 
+test, epoch 21, accuracy = 0.7111111111111111, loss = 0.696929, total = 45, correct = 32 
+train, epoch 22, accuracy = 0.8044444444444444, loss = 0.529874, total = 225, correct = 181 
+test, epoch 22, accuracy = 0.7333333333333333, loss = 0.670484, total = 45, correct = 33 
+train, epoch 23, accuracy = 0.84, loss = 0.458972, total = 225, correct = 189 
+test, epoch 23, accuracy = 0.7777777777777778, loss = 0.55197, total = 45, correct = 35 
+train, epoch 24, accuracy = 0.8488888888888889, loss = 0.416146, total = 225, correct = 191 
+test, epoch 24, accuracy = 0.7111111111111111, loss = 0.553318, total = 45, correct = 32 
+train, epoch 25, accuracy = 0.8711111111111111, loss = 0.369508, total = 225, correct = 196 
+test, epoch 25, accuracy = 0.7333333333333333, loss = 0.483178, total = 45, correct = 33 
+train, epoch 26, accuracy = 0.8888888888888888, loss = 0.299665, total = 225, correct = 200 
+test, epoch 26, accuracy = 0.8222222222222222, loss = 0.439239, total = 45, correct = 37 
+train, epoch 27, accuracy = 0.8666666666666667, loss = 0.328525, total = 225, correct = 195 
+test, epoch 27, accuracy = 0.7777777777777778, loss = 0.495108, total = 45, correct = 35 
+train, epoch 28, accuracy = 0.9066666666666666, loss = 0.244465, total = 225, correct = 204 
+test, epoch 28, accuracy = 0.7777777777777778, loss = 0.475335, total = 45, correct = 35 
+train, epoch 29, accuracy = 0.8933333333333333, loss = 0.244622, total = 225, correct = 201 
+test, epoch 29, accuracy = 0.8666666666666667, loss = 0.285284, total = 45, correct = 39 
+train, epoch 30, accuracy = 0.9377777777777778, loss = 0.19603, total = 225, correct = 211 
+test, epoch 30, accuracy = 0.8888888888888888, loss = 0.27198, total = 45, correct = 40 
+train, epoch 31, accuracy = 0.9244444444444444, loss = 0.184522, total = 225, correct = 208 
+test, epoch 31, accuracy = 0.8222222222222222, loss = 0.459004, total = 45, correct = 37 
+train, epoch 32, accuracy = 0.9333333333333333, loss = 0.177092, total = 225, correct = 210 
+test, epoch 32, accuracy = 0.8888888888888888, loss = 0.313777, total = 45, correct = 40 
+train, epoch 33, accuracy = 0.9244444444444444, loss = 0.179668, total = 225, correct = 208 
+test, epoch 33, accuracy = 0.8888888888888888, loss = 0.237124, total = 45, correct = 40 
+train, epoch 34, accuracy = 0.9111111111111111, loss = 0.195317, total = 225, correct = 205 
+test, epoch 34, accuracy = 0.8888888888888888, loss = 0.227644, total = 45, correct = 40 
+train, epoch 35, accuracy = 0.9244444444444444, loss = 0.186615, total = 225, correct = 208 
+test, epoch 35, accuracy = 0.8444444444444444, loss = 0.28692, total = 45, correct = 38 
+train, epoch 36, accuracy = 0.9555555555555556, loss = 0.136602, total = 225, correct = 215 
+test, epoch 36, accuracy = 0.9111111111111111, loss = 0.206771, total = 45, correct = 41 
+train, epoch 37, accuracy = 0.9511111111111111, loss = 0.148661, total = 225, correct = 214 
+test, epoch 37, accuracy = 0.8888888888888888, loss = 0.249772, total = 45, correct = 40 
+train, epoch 38, accuracy = 0.9333333333333333, loss = 0.148832, total = 225, correct = 210 
+test, epoch 38, accuracy = 0.8444444444444444, loss = 0.260028, total = 45, correct = 38 
+train, epoch 39, accuracy = 0.9288888888888889, loss = 0.152399, total = 225, correct = 209 
+test, epoch 39, accuracy = 0.9333333333333333, loss = 0.185779, total = 45, correct = 42 
+train, epoch 40, accuracy = 0.9777777777777777, loss = 0.0864536, total = 225, correct = 220 
+test, epoch 40, accuracy = 0.9111111111111111, loss = 0.239844, total = 45, correct = 41 
+train, epoch 41, accuracy = 0.9733333333333334, loss = 0.0925008, total = 225, correct = 219 
+test, epoch 41, accuracy = 0.9555555555555556, loss = 0.161902, total = 45, correct = 43 
+train, epoch 42, accuracy = 0.9733333333333334, loss = 0.122624, total = 225, correct = 219 
+test, epoch 42, accuracy = 0.9333333333333333, loss = 0.165255, total = 45, correct = 42 
+train, epoch 43, accuracy = 0.9555555555555556, loss = 0.0935605, total = 225, correct = 215 
+test, epoch 43, accuracy = 0.9111111111111111, loss = 0.199141, total = 45, correct = 41 
+train, epoch 44, accuracy = 0.9644444444444444, loss = 0.0843365, total = 225, correct = 217 
+test, epoch 44, accuracy = 0.8444444444444444, loss = 0.353203, total = 45, correct = 38 
+train, epoch 45, accuracy = 0.9644444444444444, loss = 0.0861475, total = 225, correct = 217 
+test, epoch 45, accuracy = 0.8888888888888888, loss = 0.20953, total = 45, correct = 40 
+train, epoch 46, accuracy = 0.9733333333333334, loss = 0.0767839, total = 225, correct = 219 
+test, epoch 46, accuracy = 0.8888888888888888, loss = 0.162541, total = 45, correct = 40 
+train, epoch 47, accuracy = 0.9777777777777777, loss = 0.07151, total = 225, correct = 220 
+test, epoch 47, accuracy = 0.8888888888888888, loss = 0.206966, total = 45, correct = 40 
+train, epoch 48, accuracy = 0.9466666666666667, loss = 0.116452, total = 225, correct = 213 
+test, epoch 48, accuracy = 0.9333333333333333, loss = 0.129255, total = 45, correct = 42 
+train, epoch 49, accuracy = 0.9688888888888889, loss = 0.0851569, total = 225, correct = 218 
+test, epoch 49, accuracy = 0.8888888888888888, loss = 0.201555, total = 45, correct = 40 
+train, epoch 50, accuracy = 0.96, loss = 0.0827878, total = 225, correct = 216 
+test, epoch 50, accuracy = 0.9111111111111111, loss = 0.201066, total = 45, correct = 41 
+train, epoch 51, accuracy = 0.9866666666666667, loss = 0.06102, total = 225, correct = 222 
+test, epoch 51, accuracy = 0.9555555555555556, loss = 0.109284, total = 45, correct = 43 
+train, epoch 52, accuracy = 0.9555555555555556, loss = 0.10128, total = 225, correct = 215 
+test, epoch 52, accuracy = 0.9333333333333333, loss = 0.165511, total = 45, correct = 42 
+train, epoch 53, accuracy = 0.9644444444444444, loss = 0.0825842, total = 225, correct = 217 
+test, epoch 53, accuracy = 0.8888888888888888, loss = 0.22532, total = 45, correct = 40 
+train, epoch 54, accuracy = 0.9644444444444444, loss = 0.0746017, total = 225, correct = 217 
+test, epoch 54, accuracy = 0.9333333333333333, loss = 0.18097, total = 45, correct = 42 
+train, epoch 55, accuracy = 0.9822222222222222, loss = 0.0588811, total = 225, correct = 221 
+test, epoch 55, accuracy = 0.9111111111111111, loss = 0.165034, total = 45, correct = 41 
+train, epoch 56, accuracy = 0.9688888888888889, loss = 0.0663534, total = 225, correct = 218 
+test, epoch 56, accuracy = 0.9777777777777777, loss = 0.0697964, total = 45, correct = 44 
+train, epoch 57, accuracy = 0.9733333333333334, loss = 0.0685721, total = 225, correct = 219 
+test, epoch 57, accuracy = 0.9777777777777777, loss = 0.0768396, total = 45, correct = 44 
+train, epoch 58, accuracy = 0.9822222222222222, loss = 0.0650876, total = 225, correct = 221 
+test, epoch 58, accuracy = 1.0, loss = 0.0479278, total = 45, correct = 45 
+train, epoch 59, accuracy = 0.9866666666666667, loss = 0.0492495, total = 225, correct = 222 
+test, epoch 59, accuracy = 0.9777777777777777, loss = 0.071182, total = 45, correct = 44 
+train, epoch 60, accuracy = 0.9777777777777777, loss = 0.0627525, total = 225, correct = 220 
+test, epoch 60, accuracy = 0.9333333333333333, loss = 0.122284, total = 45, correct = 42 
+train, epoch 61, accuracy = 0.9955555555555555, loss = 0.0305401, total = 225, correct = 224 
+test, epoch 61, accuracy = 1.0, loss = 0.0292638, total = 45, correct = 45 
+train, epoch 62, accuracy = 0.9866666666666667, loss = 0.0431551, total = 225, correct = 222 
+test, epoch 62, accuracy = 0.9777777777777777, loss = 0.0729738, total = 45, correct = 44 
+train, epoch 63, accuracy = 0.9955555555555555, loss = 0.0333562, total = 225, correct = 224 
+test, epoch 63, accuracy = 0.9777777777777777, loss = 0.0591278, total = 45, correct = 44 
+train, epoch 64, accuracy = 0.9911111111111112, loss = 0.0330925, total = 225, correct = 223 
+test, epoch 64, accuracy = 0.9555555555555556, loss = 0.0997367, total = 45, correct = 43 
+train, epoch 65, accuracy = 0.9733333333333334, loss = 0.049643, total = 225, correct = 219 
+test, epoch 65, accuracy = 0.9777777777777777, loss = 0.0559438, total = 45, correct = 44 
+train, epoch 66, accuracy = 0.9911111111111112, loss = 0.0428062, total = 225, correct = 223 
+test, epoch 66, accuracy = 0.9555555555555556, loss = 0.1096, total = 45, correct = 43 
+train, epoch 67, accuracy = 1.0, loss = 0.0184978, total = 225, correct = 225 
+test, epoch 67, accuracy = 1.0, loss = 0.0454971, total = 45, correct = 45 
+train, epoch 68, accuracy = 0.9822222222222222, loss = 0.0365724, total = 225, correct = 221 
+test, epoch 68, accuracy = 1.0, loss = 0.0387177, total = 45, correct = 45 
+train, epoch 69, accuracy = 0.9955555555555555, loss = 0.0216618, total = 225, correct = 224 
+test, epoch 69, accuracy = 1.0, loss = 0.0266398, total = 45, correct = 45 
+train, epoch 70, accuracy = 0.9866666666666667, loss = 0.0306377, total = 225, correct = 222 
+test, epoch 70, accuracy = 0.9777777777777777, loss = 0.0344399, total = 45, correct = 44 
+train, epoch 71, accuracy = 0.9911111111111112, loss = 0.0258488, total = 225, correct = 223 
+test, epoch 71, accuracy = 0.9777777777777777, loss = 0.0527679, total = 45, correct = 44 
+train, epoch 72, accuracy = 0.9822222222222222, loss = 0.030102, total = 225, correct = 221 
+test, epoch 72, accuracy = 0.9777777777777777, loss = 0.0474412, total = 45, correct = 44 
+train, epoch 73, accuracy = 0.9955555555555555, loss = 0.0145278, total = 225, correct = 224 
+test, epoch 73, accuracy = 0.9777777777777777, loss = 0.0462149, total = 45, correct = 44 
+train, epoch 74, accuracy = 1.0, loss = 0.0174436, total = 225, correct = 225 
+test, epoch 74, accuracy = 0.9777777777777777, loss = 0.0493415, total = 45, correct = 44 
+train, epoch 75, accuracy = 0.9911111111111112, loss = 0.0173823, total = 225, correct = 223 
+test, epoch 75, accuracy = 1.0, loss = 0.0214457, total = 45, correct = 45 
+train, epoch 76, accuracy = 1.0, loss = 0.00758388, total = 225, correct = 225 
+test, epoch 76, accuracy = 0.9333333333333333, loss = 0.118646, total = 45, correct = 42 
+train, epoch 77, accuracy = 0.9911111111111112, loss = 0.0201588, total = 225, correct = 223 
+test, epoch 77, accuracy = 1.0, loss = 0.0195445, total = 45, correct = 45 
+train, epoch 78, accuracy = 1.0, loss = 0.00851205, total = 225, correct = 225 
+test, epoch 78, accuracy = 1.0, loss = 0.0354978, total = 45, correct = 45 
+train, epoch 79, accuracy = 1.0, loss = 0.00604849, total = 225, correct = 225 
+test, epoch 79, accuracy = 0.9111111111111111, loss = 0.183399, total = 45, correct = 41 
+train, epoch 80, accuracy = 1.0, loss = 0.00650799, total = 225, correct = 225 
+test, epoch 80, accuracy = 0.9333333333333333, loss = 0.261186, total = 45, correct = 42 
+train, epoch 81, accuracy = 0.9911111111111112, loss = 0.021702, total = 225, correct = 223 
+test, epoch 81, accuracy = 0.9777777777777777, loss = 0.0508782, total = 45, correct = 44 
+train, epoch 82, accuracy = 0.9955555555555555, loss = 0.0155891, total = 225, correct = 224 
+test, epoch 82, accuracy = 0.9777777777777777, loss = 0.0319684, total = 45, correct = 44 
+train, epoch 83, accuracy = 0.9955555555555555, loss = 0.0111222, total = 225, correct = 224 
+test, epoch 83, accuracy = 0.9777777777777777, loss = 0.0441494, total = 45, correct = 44 
+train, epoch 84, accuracy = 1.0, loss = 0.00633186, total = 225, correct = 225 
+test, epoch 84, accuracy = 1.0, loss = 0.0125754, total = 45, correct = 45 
+train, epoch 85, accuracy = 0.9955555555555555, loss = 0.0106618, total = 225, correct = 224 
+test, epoch 85, accuracy = 1.0, loss = 0.0277565, total = 45, correct = 45 
+train, epoch 86, accuracy = 1.0, loss = 0.00450362, total = 225, correct = 225 
+test, epoch 86, accuracy = 0.9777777777777777, loss = 0.061468, total = 45, correct = 44 
+train, epoch 87, accuracy = 1.0, loss = 0.00925395, total = 225, correct = 225 
+test, epoch 87, accuracy = 0.9777777777777777, loss = 0.0893958, total = 45, correct = 44 
+train, epoch 88, accuracy = 0.9866666666666667, loss = 0.0209743, total = 225, correct = 222 
+test, epoch 88, accuracy = 0.9555555555555556, loss = 0.0724583, total = 45, correct = 43 
+train, epoch 89, accuracy = 0.9955555555555555, loss = 0.0136842, total = 225, correct = 224 
+test, epoch 89, accuracy = 0.9777777777777777, loss = 0.0344797, total = 45, correct = 44 
+train, epoch 90, accuracy = 0.9911111111111112, loss = 0.0112296, total = 225, correct = 223 
+test, epoch 90, accuracy = 0.9777777777777777, loss = 0.0437716, total = 45, correct = 44 
+train, epoch 91, accuracy = 0.9911111111111112, loss = 0.0191621, total = 225, correct = 223 
+test, epoch 91, accuracy = 1.0, loss = 0.0278786, total = 45, correct = 45 
+train, epoch 92, accuracy = 0.9955555555555555, loss = 0.0157868, total = 225, correct = 224 
+test, epoch 92, accuracy = 0.9777777777777777, loss = 0.0655301, total = 45, correct = 44 
+train, epoch 93, accuracy = 1.0, loss = 0.00722842, total = 225, correct = 225 
+test, epoch 93, accuracy = 0.9555555555555556, loss = 0.163405, total = 45, correct = 43 
+train, epoch 94, accuracy = 0.9866666666666667, loss = 0.0289746, total = 225, correct = 222 
+test, epoch 94, accuracy = 1.0, loss = 0.0249277, total = 45, correct = 45 
+train, epoch 95, accuracy = 0.9955555555555555, loss = 0.00568512, total = 225, correct = 224 
+test, epoch 95, accuracy = 1.0, loss = 0.011113, total = 45, correct = 45 
+train, epoch 96, accuracy = 1.0, loss = 0.00396777, total = 225, correct = 225 
+test, epoch 96, accuracy = 1.0, loss = 0.00596177, total = 45, correct = 45 
+train, epoch 97, accuracy = 1.0, loss = 0.00492281, total = 225, correct = 225 
+test, epoch 97, accuracy = 1.0, loss = 0.00379936, total = 45, correct = 45 
+train, epoch 98, accuracy = 0.9955555555555555, loss = 0.00857675, total = 225, correct = 224 
+test, epoch 98, accuracy = 1.0, loss = 0.00443615, total = 45, correct = 45 
+train, epoch 99, accuracy = 0.9955555555555555, loss = 0.00719767, total = 225, correct = 224 
+test, epoch 99, accuracy = 1.0, loss = 0.00753464, total = 45, correct = 45 
+correct:  45
+total:  45
+accuracy:  1.0
+whether to  save or not? y/Y
